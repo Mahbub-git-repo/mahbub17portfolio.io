@@ -280,3 +280,10 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() {
     if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+// Fix About section delay on mobile
+if (window.innerWidth <= 768) {
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+        aboutSection.classList.add('visible');
+    }
+}
