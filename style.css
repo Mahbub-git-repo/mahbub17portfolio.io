@@ -1480,7 +1480,7 @@ header.scrolled {
 }
 
 /* ================================================================
-   17. RESPONSIVE — TABLET
+   RESPONSIVE — TABLET
    ================================================================ */
 @media (max-width: 1024px) {
     .hero-inner {
@@ -1490,6 +1490,8 @@ header.scrolled {
 
     .hero-visual {
         order: -1;
+        justify-content: center;
+        margin-left: 0;          /* reset any left shift */
     }
 
     .hero-badge,
@@ -1517,9 +1519,18 @@ header.scrolled {
 }
 
 /* ================================================================
-   18. RESPONSIVE — MOBILE
+   RESPONSIVE — MOBILE
    ================================================================ */
 @media (max-width: 768px) {
+    :root {
+        --sp-12: 64px;   /* tighten section padding on mobile */
+        --sp-8:  40px;
+    }
+
+    .container {
+        padding: 0 var(--sp-2); /* tighter side padding */
+    }
+
     .nav {
         display: none;
     }
@@ -1528,16 +1539,119 @@ header.scrolled {
         display: flex;
     }
 
+    /* Hero */
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: var(--sp-4);
+        text-align: center;
+    }
+
+    .hero-visual {
+        order: -1;
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .photo-frame {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;          /* force center */
+    }
+
+    /* Keep stat cards inside viewport */
+    .stat-card-1 {
+        left: 50%;
+        transform: translateX(-130%);
+        bottom: -32px;
+    }
+
+    .stat-card-2 {
+        right: 50%;
+        transform: translateX(130%);
+        top: -32px;
+    }
+
+    .hero-name {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    /* Skills */
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
+    /* About */
+    .about-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-metrics {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Contact */
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Education */
+    .timeline {
+        padding-left: var(--sp-4);
+    }
+
+    .languages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--sp-2);
+    }
+}
+
+/* ================================================================
+   RESPONSIVE — SMALL MOBILE
+   ================================================================ */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-name {
+        font-size: 1.9rem;
+    }
+
+    .photo-frame {
+        width: 170px;
+        height: 170px;
+    }
+
+    .stat-card {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+    }
+
+    .stat-num {
+        font-size: 1.1rem;
     }
 
     .about-info-grid {
@@ -1548,48 +1662,13 @@ header.scrolled {
         grid-template-columns: 1fr 1fr;
     }
 
-    .languages-grid {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .projects-grid,
+    .skills-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
-    }
-
-    .timeline {
-        padding-left: var(--sp-4);
-    }
-
-    .footer-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: var(--sp-2);
-    }
-
-    .stat-card-1 {
-        left: -20px;
-        bottom: -20px;
-    }
-
-    .stat-card-2 {
-        right: -16px;
-        top: -20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-name {
-        font-size: 2.2rem;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .photo-frame {
-        width: 180px;
-        height: 180px;
     }
 }
