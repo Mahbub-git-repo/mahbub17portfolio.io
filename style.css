@@ -735,10 +735,6 @@ header.scrolled {
 /* ================================================================
    10. ABOUT SECTION
    ================================================================ */
-.about {
-    background: var(--clr-surface);
-}
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -751,6 +747,8 @@ header.scrolled {
     margin-bottom: var(--sp-3);
     font-size: 1rem;
     line-height: 1.8;
+    word-break: break-word;      /* prevent text overflow */
+    overflow-wrap: break-word;   /* handles long words/emails */
 }
 
 .about-text p strong {
@@ -771,6 +769,7 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;                /* allows grid children to shrink */
 }
 
 .info-label {
@@ -783,6 +782,7 @@ header.scrolled {
 .info-value {
     font-size: 0.9rem;
     color: var(--clr-text);
+    word-break: break-word;      /* prevent overflow on small screens */
 }
 
 .about-metrics {
@@ -799,6 +799,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     gap: var(--sp-2);
+    min-width: 0;                /* allows card to shrink properly */
     transition: border-color var(--t-base), box-shadow var(--t-base);
 }
 
@@ -817,7 +818,7 @@ header.scrolled {
     justify-content: center;
     color: var(--clr-primary);
     font-size: 1.1rem;
-    flex-shrink: 0;
+    flex-shrink: 0;              /* icon never squishes */
 }
 
 .metric-value {
@@ -832,6 +833,7 @@ header.scrolled {
     font-size: 0.8rem;
     color: var(--clr-text-muted);
     margin-top: 4px;
+    word-break: break-word;
 }
 
 /* ================================================================
