@@ -1,390 +1,621 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Mahbub Alam | Electronics & Telecommunication Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mohammed Mahbub Alam – Aspiring IT & Network Engineer. Electronics and Telecommunication Engineering undergraduate at CUET." />
+    <meta name="keywords" content="IT Engineer, Network Engineer, CCNA, Cisco, Portfolio, Mohammed Mahbub Alam" />
+    <title>Mohammed Mahbub Alam | IT & Network Engineer</title>
+
+    <!-- Google Fonts: Syne (display) + IBM Plex Mono (code) + Outfit (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Mahbub's Portfolio</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+
+    <!-- ===================== HEADER ===================== -->
+    <header id="header" role="banner">
+        <div class="container nav-container">
+            <a href="#home" class="logo" aria-label="Go to top">
+                <span class="logo-bracket">[</span>M<span class="logo-dot">.</span>M<span class="logo-bracket">]</span>
+            </a>
+
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-links" role="list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="nav-controls">
-                    <div class="sidebar-toggle">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <div class="hamburger">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
             </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle light/dark mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <!-- Mobile hamburger -->
+                <button id="hamburger" class="icon-btn hamburger" aria-label="Open mobile menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
+
+        <!-- Scroll progress bar -->
+        <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Reading progress"></div>
     </header>
 
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h3>Quick Navigation</h3>
-            <div class="sidebar-close">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <div class="sidebar-content">
-            <ul class="sidebar-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Projects</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-            <div class="sidebar-contact">
-                <h4>Quick Contact</h4>
-                <div class="sidebar-contact-links">
-                    <a href="mailto:u2108017@student.cuet.ac.bd" class="sidebar-contact-link">
-                        <i class="fas fa-envelope"></i>
-                        Email
-                    </a>
-                    <a href="tel:+8801974438290" class="sidebar-contact-link">
-                        <i class="fas fa-phone"></i>
-                        Call
-                    </a>
-                    <a href="Mahbub_Alam_CV.pdf" class="sidebar-contact-link" download>
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                </div>
-            </div>
-        </div>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <ul class="mobile-links" role="list">
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#education" class="mobile-link">Education</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
     </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
 
-    <!-- Hero Section -->
-<section id="home" class="hero section">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Hello, It's Me</h1>
-                <h2>Mohammed Mahbub Alam</h2>
-                <div class="typing-container">
-                    <p>An Undergraduate Electronics & Telecommunication Engineering Student</p>
-                    <p class="typing-text">I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-                </div>
-                <p>B.Sc. in Electronics and Telecommunication Engineering with hands-on experience in VLSI design, digital circuits, and software development. Seeking software, VLSI design and Machine learning internships to apply technical expertise in practical projects.</p>
-                <div class="hero-btns">
-                    <a href="Mahbub_Alam_CV.pdf" class="btn btn-primary" download>Download CV</a>
-                    <a href="#contact" class="btn">Contact Me</a>
-                </div>
-                <div class="contact-links">
-                    <a href="mailto:u2108017@student.cuet.ac.bd" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        Email Me
-                    </a>
-                    <a href="tel:+8801974438290" class="contact-link">
-                        <i class="fas fa-phone"></i>
-                        Call Me
-                    </a>
-                    <a href="https://linkedin.com/in/mohammed-mahbub-alam" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/Mahbub17git" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-img">
-                    <img src="mypic.png" alt="Profile picture of Mohammed Mahbub Alam">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <main id="main-content">
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a dedicated Electronics and Telecommunication Engineering student at CUET with a passion for VLSI design, digital circuits, and software development. My academic journey has equipped me with strong foundations in both theoretical concepts and practical applications.</p>
-                    
-                    <div class="education">
-                        <h3>Education</h3>
-                        <div class="education-item">
-                            <h3>B.Sc. in Electronics and Telecommunication Engineering</h3>
-                            <p class="date">CUET (Jan 2023 – Present)</p>
-                            <p>CGPA: 3.33(In first 5th semester)/4.00</p>
-                        </div>
-                        <div class="education-item">
-                            <h3>Higher Secondary Certificate (Science)</h3>
-                            <p class="date">Govt. Hazi Muhammad Mohsin College (Jul 2019 – Nov 2021)</p>
-                            <p>GPA: 5.00/5.00</p>
-                        </div>
-                    </div>
+        <!-- ===================== HERO ===================== -->
+        <section id="home" class="hero section" aria-label="Hero">
+            <!-- Animated grid background -->
+            <div class="hero-grid" aria-hidden="true"></div>
+            <!-- Glow orbs -->
+            <div class="orb orb-1" aria-hidden="true"></div>
+            <div class="orb orb-2" aria-hidden="true"></div>
 
-                    <div class="certifications">
-                        <h3>Certifications</h3>
-                        <ul>
-                            
-                            <li>Assistant Data Scientist (Ongoing, Expected 2026)</li>
-                            <li>MATLAB Onramp – MathWorks (2024)</li>
-                        </ul>
+            <div class="container hero-inner">
+                <div class="hero-text reveal">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span class="mono">Available for opportunities</span>
                     </div>
-                </div>
-                <div class="about-image">
-                    <!-- Placeholder for additional image if needed -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-content">
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Software</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">GitHub</span>
-                        <span class="skill-item">MATLAB</span>
-                        <span class="skill-item">Proteus</span>
-                        <span class="skill-item">Advance Design System</span>
-                        <span class="skill-item">I2EX</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Concepts</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Digital Logic Design</span>
-                        <span class="skill-item">Data Structures & Algorithms</span>
-                        <span class="skill-item">OOP</span>
-                        <span class="skill-item">Circuit Simulation</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Web Development</h3>
-                    <div class="skill-list">
-                       
-                        <span class="skill-item">Responsive Design</span>
-                        <span class="skill-item">Frontend Development</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Specialized</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Machine learning</span>
-                        <span class="skill-item">Circuit simulation</span>
-                     
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Bengali (Native)</span>
-                        <span class="skill-item">English (Intermediate)</span>
-                        <span class="skill-item">Hindi (Fluent)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="10" y="10" width="80" height="60" rx="5" fill="currentColor"/>
-                            <rect x="20" y="20" width="60" height="10" fill="#0a192f"/>
-                            <rect x="20" y="35" width="40" height="5" fill="#0a192f"/>
-                            <rect x="20" y="45" width="50" height="5" fill="#0a192f"/>
-                            <rect x="20" y="55" width="30" height="5" fill="#0a192f"/>
-                        </svg>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>Responsive, mobile-first portfolio website with improved load speed by 30%</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                       
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="https://github.com/Mahbub-git-repo/mahbub17portfolio.io" class="btn">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="15" y="20" width="70" height="60" rx="5" fill="currentColor"/>
-                            <circle cx="30" cy="35" r="5" fill="#0a192f"/>
-                            <circle cx="50" cy="35" r="5" fill="#0a192f"/>
-                            <circle cx="70" cy="35" r="5" fill="#0a192f"/>
-                            <rect x="25" y="50" width="50" height="20" rx="3" fill="#0a192f"/>
-                        </svg>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Logic IC-Based Security System</h3>
-                        <p>Password-protected CMOS/TTL logic IC system with 95% simulation accuracy</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">CD4043</span>
-                            <span class="tech-tag">7410</span>
-                            <span class="tech-tag">7404 ICS</span>
-                            <span class="tech-tag">Digital Logic</span>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="https://github.com/Mahbub17git" class="btn">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="github-cta">
-                <p>Interested in seeing more of my work?</p>
-                <a href="https://github.com/Mahbub-git-repo" class="btn btn-primary">Visit My GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and engineering.</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p>u2108017@student.cuet.ac.bd</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Phone</h3>
-                            <p>+880 1974-438290</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/mohammed-mahbub-alam">View Profile</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/Mahbub-git-repo">View Projects</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-info">
-                        <h3>Mohammed Mahbub Alam</h3>
-                        <p>Electronics & Telecommunication Engineer</p>
-                        <p>Passionate about VLSI design, digital circuits, and software development. Always eager to learn and take on new challenges in the field of technology.</p>
-                    </div>
-                    <div class="footer-links">
-                        <div class="footer-column">
-                            <h4>Quick Links</h4>
-                            <ul>
-                                <li><a href="#home">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#skills">Skills</a></li>
-                                <li><a href="#portfolio">Projects</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4>Connect</h4>
-                            <ul>
-                                <li><a href="https://linkedin.com/in/mohammed-mahbub-alam">LinkedIn</a></li>
-                                <li><a href="https://github.com/Mahbub-git-repo">GitHub</a></li>
-                                <li><a href="mailto:u2108017@student.cuet.ac.bd">Email</a></li>
-                                <li><a href="tel:+8801974438290">Phone</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4>Resources</h4>
-                            <ul>
-                                <li><a href="Mahbub_Alam_CV.pdf" download>Download CV</a></li>
-                                <li><a href="#portfolio">View Projects</a></li>
-                                <li><a href="#skills">Technical Skills</a></li>
-                                <li><a href="#contact">Get in Touch</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="social-links">
-                        <a href="mailto:u2108017@student.cuet.ac.bd" class="social-link">
-                            <i class="fas fa-envelope"></i>
+                    <h1 class="hero-name">Mohammed<br/><span class="accent">Mahbub Alam</span></h1>
+                    <p class="hero-role mono">
+                        <span class="typed-prefix">// </span>
+                        <span id="typed-text"></span><span class="cursor" aria-hidden="true">|</span>
+                    </p>
+                    <p class="hero-tagline">
+                        Electronics &amp; Telecom Engineering undergraduate building expertise in networking infrastructure, embedded systems, and RF engineering.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="my_cv_v_1.pdf" class="btn btn-primary" download aria-label="Download CV">
+                            <i class="fas fa-download" aria-hidden="true"></i> Download CV
                         </a>
-                        <a href="tel:+8801974438290" class="social-link">
-                            <i class="fas fa-phone"></i>
+                        <a href="#projects" class="btn btn-outline">
+                            View Projects <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
-                        <a href="https://linkedin.com/in/mohammed-mahbub-alam" class="social-link">
-                            <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://linkedin.com/in/mohammed-mahbub-alam" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/Mahbub17git" class="social-link">
+                        <a href="https://github.com/Mahbub-git-repo" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
                             <i class="fab fa-github"></i>
                         </a>
+                        <a href="mailto:u2108017@student.cuet.ac.bd" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
-                    <p class="copyright">© 2024 Mohammed Mahbub Alam. All Rights Reserved.</p>
                 </div>
+
+                <div class="hero-visual reveal reveal-right">
+                    <div class="photo-frame">
+                        <img src="mypic.png" alt="Portrait of Mohammed Mahbub Alam" class="hero-photo" />
+                        <div class="photo-ring" aria-hidden="true"></div>
+                        <div class="photo-ring ring-2" aria-hidden="true"></div>
+                    </div>
+                    <!-- Floating stat cards
+                    <div class="stat-card stat-card-1 reveal-delay-1">
+                        <span class="stat-num mono">3.33</span>
+                        <span class="stat-label">CGPA</span>
+                    </div>
+                    <div class="stat-card stat-card-2 reveal-delay-2">
+                        <i class="fas fa-network-wired"></i>
+                        <span class="stat-label">Networking Focus</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <a href="#about" class="scroll-hint" aria-label="Scroll down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- ===================== ABOUT ===================== -->
+        <section id="about" class="about section" aria-label="About">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag mono">01 / About</span>
+                    <h2 class="section-title">Who I Am</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            I'm a third-year <strong>Electronics and Telecommunication Engineering</strong> student at CUET, driven by a deep interest in how networks connect the world. My academic foundation spans digital systems, microprocessor architecture, and RF engineering — and I'm actively building expertise in IT infrastructure and network design.
+                        </p>
+                        <p>
+                            I approach problems with an engineering mindset: structured, systematic, and solution-oriented. Whether designing a topology in Cisco Packet Tracer or writing clean assembly for microcontrollers, I prioritize reliability and clarity.
+                        </p>
+                        <p>
+                            My goal is to become a skilled <strong>Network & IT Engineer</strong> who can design, secure, and optimize real-world infrastructure — and I'm actively working toward CCNA certification to back it up.
+                        </p>
+
+                        <div class="about-info-grid">
+                            <div class="info-item">
+                                <span class="info-label mono">Location</span>
+                                <span class="info-value">Chattogram, Bangladesh</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label mono">University</span>
+                                <span class="info-value">CUET</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label mono">Degree</span>
+                                <span class="info-value">B.Sc. ETE (2023–Present)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label mono">Focus</span>
+                                <span class="info-value">Networking &amp; IT Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-metrics reveal reveal-right">
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <div class="metric-value mono">3.33</div>
+                                <div class="metric-label">Current CGPA</div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div>
+                                <div class="metric-value mono">6+</div>
+                                <div class="metric-label">Technical Projects</div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fas fa-certificate"></i></div>
+                            <div>
+                                <div class="metric-value mono">2</div>
+                                <div class="metric-label">Certifications</div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fas fa-code"></i></div>
+                            <div>
+                                <div class="metric-value mono">4+</div>
+                                <div class="metric-label">Languages Known</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SKILLS ===================== -->
+        <section id="skills" class="skills section" aria-label="Skills">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag mono">02 / Skills</span>
+                    <h2 class="section-title">Technical Stack</h2>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- Networking -->
+                    <div class="skill-category reveal">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-network-wired skill-cat-icon"></i>
+                            <h3>Networking</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag primary">Routing &amp; Switching</span>
+                            <span class="skill-tag primary">VLANs / Trunking</span>
+                            <span class="skill-tag primary">Subnetting (IPv4/IPv6)</span>
+                            <span class="skill-tag primary">OSPF / RIP</span>
+                            <span class="skill-tag primary">STP / RSTP</span>
+                            <span class="skill-tag primary">NAT / PAT</span>
+                            <span class="skill-tag primary">ACLs</span>
+                            <span class="skill-tag primary">TCP/IP Stack</span>
+                            <span class="skill-tag primary">DNS / DHCP</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Software -->
+                    <div class="skill-category reveal reveal-delay-1">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-tools skill-cat-icon"></i>
+                            <h3>Tools &amp; Software</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag secondary">Cisco Packet Tracer</span>
+                            <span class="skill-tag secondary">Wireshark</span>
+                            <span class="skill-tag secondary">Linux CLI</span>
+                            <span class="skill-tag secondary">Git / GitHub</span>
+                            <span class="skill-tag secondary">MATLAB</span>
+                            <span class="skill-tag secondary">Proteus</span>
+                            <span class="skill-tag secondary">NI Multisim</span>
+                            <span class="skill-tag secondary">ADS (RF)</span>
+                            <span class="skill-tag secondary">CST / HFSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Programming -->
+                    <div class="skill-category reveal reveal-delay-2">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-terminal skill-cat-icon"></i>
+                            <h3>Programming</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag tertiary">C / C++</span>
+                            <span class="skill-tag tertiary">Python</span>
+                            <span class="skill-tag tertiary">Assembly (8086)</span>
+                            <span class="skill-tag tertiary">JavaScript</span>
+                            <span class="skill-tag tertiary">HTML / CSS</span>
+                            <span class="skill-tag tertiary">LaTeX</span>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="skill-category reveal reveal-delay-3">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-certificate skill-cat-icon"></i>
+                            <h3>Certifications</h3>
+                        </div>
+                        <div class="cert-list">
+                            <div class="cert-item">
+                                <div class="cert-badge"><i class="fas fa-network-wired"></i></div>
+                                <div>
+                                    <div class="cert-name">CCNA (Cisco Certified Network Associate)</div>
+                                    <div class="cert-status in-progress mono">In Progress</div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-badge"><i class="fas fa-robot"></i></div>
+                                <div>
+                                    <div class="cert-name">Associate Data Scientist – DataCamp</div>
+                                    <div class="cert-status in-progress mono">Expected 2026</div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-badge"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <div class="cert-name">MATLAB Onramp – MathWorks</div>
+                                    <div class="cert-status completed mono">Completed 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PROJECTS ===================== -->
+        <section id="projects" class="projects section" aria-label="Projects">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag mono">03 / Projects</span>
+                    <h2 class="section-title">Featured Work</h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- Project 1: Network Topology -->
+                    <article class="project-card reveal" aria-label="Networking Lab – Enterprise Topology">
+                        <div class="project-card-top">
+                            <div class="project-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mahbub-git-repo" class="project-link-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Enterprise Network Topology</h3>
+                        <p class="project-desc">Designed a multi-department campus network with VLANs, inter-VLAN routing via Layer-3 switching, OSPF dynamic routing, and redundant links using STP. Simulated in Cisco Packet Tracer.</p>
+                        <div class="project-problem">
+                            <span class="mono problem-label">// Problem Solved</span>
+                            <p>Eliminated broadcast storms and segmented traffic by implementing VLANs with dot1Q trunking, improving security and bandwidth efficiency across departments.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">Cisco Packet Tracer</span>
+                            <span class="tech-chip">VLANs</span>
+                            <span class="tech-chip">OSPF</span>
+                            <span class="tech-chip">STP</span>
+                            <span class="tech-chip">L3 Switch</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Vending Machine -->
+                    <article class="project-card reveal reveal-delay-1" aria-label="Microprocessor Vending Machine">
+                        <div class="project-card-top">
+                            <div class="project-icon"><i class="fas fa-microchip"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mahbub-git-repo" class="project-link-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Microprocessor-Based Vending Machine</h3>
+                        <p class="project-desc">Developed an automated vending system using 8086 microprocessor. Implemented coin detection, product selection logic, and dispense control in assembly language, validated in Proteus simulation.</p>
+                        <div class="project-problem">
+                            <span class="mono problem-label">// Problem Solved</span>
+                            <p>Achieved reliable timing and I/O control using hardware interrupts and port manipulation — demonstrating low-level embedded systems design.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">8086 ASM</span>
+                            <span class="tech-chip">Proteus</span>
+                            <span class="tech-chip">Embedded C</span>
+                            <span class="tech-chip">Digital I/O</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Antenna Design -->
+                    <article class="project-card reveal reveal-delay-2" aria-label="Microwave Antenna Design">
+                        <div class="project-card-top">
+                            <div class="project-icon"><i class="fas fa-broadcast-tower"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mahbub-git-repo" class="project-link-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Microwave Antenna Design</h3>
+                        <p class="project-desc">Designed and optimized microwave antennas for wireless communication using CST/HFSS. Analyzed radiation patterns, gain, bandwidth, return loss (S11), and impedance matching.</p>
+                        <div class="project-problem">
+                            <span class="mono problem-label">// Problem Solved</span>
+                            <p>Improved antenna gain by 3 dB through geometric optimization and substrate tuning, achieving &lt;–10 dB return loss across target frequency band.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">CST Studio</span>
+                            <span class="tech-chip">HFSS</span>
+                            <span class="tech-chip">RF Engineering</span>
+                            <span class="tech-chip">ADS</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Security System -->
+                    <article class="project-card reveal reveal-delay-3" aria-label="Logic IC Security System">
+                        <div class="project-card-top">
+                            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mahbub-git-repo" class="project-link-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Logic IC-Based Security System</h3>
+                        <p class="project-desc">Built a password-protected security system using CMOS/TTL logic ICs (CD4043, 7410, 7404). Integrated sensor-based intrusion detection and alarm triggering without a microcontroller.</p>
+                        <div class="project-problem">
+                            <span class="mono problem-label">// Problem Solved</span>
+                            <p>Demonstrated hardware-only access control using combinational logic — validating deep understanding of Boolean algebra and IC interfacing.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">CD4043</span>
+                            <span class="tech-chip">7410 / 7404</span>
+                            <span class="tech-chip">Logic Design</span>
+                            <span class="tech-chip">NI Multisim</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Portfolio Website -->
+                    <article class="project-card reveal" aria-label="Personal Portfolio Website">
+                        <div class="project-card-top">
+                            <div class="project-icon"><i class="fas fa-globe"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mahbub-git-repo" class="project-link-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Personal Portfolio Website</h3>
+                        <p class="project-desc">Designed and developed a fully responsive portfolio website from scratch using HTML5, CSS3, and vanilla JavaScript. Includes smooth animations, light/dark mode, and semantic structure.</p>
+                        <div class="project-problem">
+                            <span class="mono problem-label">// Problem Solved</span>
+                            <p>Created a professional online presence with fast load times, zero dependencies, and recruiter-optimized layout deployed on GitHub Pages.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">HTML5</span>
+                            <span class="tech-chip">CSS3</span>
+                            <span class="tech-chip">JavaScript</span>
+                            <span class="tech-chip">GitHub Pages</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Digital Logic -->
+                    <article class="project-card reveal reveal-delay-1" aria-label="Digital Logic Design Project">
+                        <div class="project-card-top">
+                            <div class="project-icon"><i class="fas fa-chess-board"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mahbub-git-repo" class="project-link-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Digital Logic Design System</h3>
+                        <p class="project-desc">Designed combinational and sequential circuits including multiplexers, decoders, flip-flops, and counters. Optimized logic expressions using Karnaugh maps and verified in simulation tools.</p>
+                        <div class="project-problem">
+                            <span class="mono problem-label">// Problem Solved</span>
+                            <p>Minimized gate count and propagation delays through systematic K-map simplification, achieving optimal circuit performance.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">Logic Gates</span>
+                            <span class="tech-chip">Boolean Algebra</span>
+                            <span class="tech-chip">K-Maps</span>
+                            <span class="tech-chip">Multisim</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== EDUCATION ===================== -->
+        <section id="education" class="education section" aria-label="Education and Experience">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag mono">04 / Education</span>
+                    <h2 class="section-title">Academic Background</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="mono timeline-date">Jan 2023 – Present</span>
+                                <span class="timeline-status active">Active</span>
+                            </div>
+                            <h3 class="timeline-title">B.Sc. in Electronics &amp; Telecommunication Engineering</h3>
+                            <p class="timeline-org">Chittagong University of Engineering and Technology (CUET)</p>
+                            <div class="timeline-detail">
+                                <span class="mono">CGPA: 3.33 / 4.00</span>
+                            </div>
+                            <p class="timeline-desc">Relevant coursework: Data Structures, Digital Logic Design, Microprocessors, Circuit Theory, Signals &amp; Systems, RF Engineering, Embedded Systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="mono timeline-date">Jul 2019 – Nov 2021</span>
+                                <span class="timeline-status completed">Completed</span>
+                            </div>
+                            <h3 class="timeline-title">Higher Secondary Certificate (Science)</h3>
+                            <p class="timeline-org">Government Haji Muhammad Mohsin College, Chattogram</p>
+                            <div class="timeline-detail">
+                                <span class="mono">GPA: 5.00 / 5.00 &nbsp;·&nbsp; General Scholarship Recipient</span>
+                            </div>
+                            <p class="timeline-desc">Achieved perfect GPA and awarded a general scholarship for academic excellence in science stream.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Languages row -->
+                <div class="languages-row reveal">
+                    <h3 class="languages-title">Languages</h3>
+                    <div class="languages-grid">
+                        <div class="lang-item">
+                            <span class="lang-name">Bengali</span>
+                            <span class="mono lang-level">Native</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">English</span>
+                            <span class="mono lang-level">Intermediate</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Hindi</span>
+                            <span class="mono lang-level">Fluent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CONTACT ===================== -->
+        <section id="contact" class="contact section" aria-label="Contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag mono">05 / Contact</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <p class="contact-intro">I'm actively looking for internship and entry-level opportunities in networking and IT infrastructure. If you have a role or project that could be a good fit, I'd love to hear from you.</p>
+
+                        <div class="contact-items">
+                            <a href="mailto:u2108017@student.cuet.ac.bd" class="contact-item" aria-label="Send email">
+                                <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <span class="contact-item-label mono">Email</span>
+                                    <span class="contact-item-value">u2108017@student.cuet.ac.bd</span>
+                                </div>
+                            </a>
+                            <a href="tel:+8801974438290" class="contact-item" aria-label="Call phone">
+                                <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <span class="contact-item-label mono">Phone</span>
+                                    <span class="contact-item-value">+880 1974 438290</span>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/mohammed-mahbub-alam" class="contact-item" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+                                <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+                                <div>
+                                    <span class="contact-item-label mono">LinkedIn</span>
+                                    <span class="contact-item-value">mohammed-mahbub-alam</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/Mahbub-git-repo" class="contact-item" target="_blank" rel="noopener" aria-label="GitHub profile">
+                                <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+                                <div>
+                                    <span class="contact-item-label mono">GitHub</span>
+                                    <span class="contact-item-value">Mahbub-git-repo</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal reveal-right" id="contact-form" novalidate aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required autocomplete="name" aria-required="true" />
+                            <span class="form-error" id="name-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
+                            <span class="form-error" id="email-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Internship Opportunity / Collaboration" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="5" placeholder="Your message..." required aria-required="true"></textarea>
+                            <span class="form-error" id="message-error" role="alert"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
+                            <span id="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+                        </button>
+                        <div class="form-success" id="form-success" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <span class="logo mono">[M.M]</span>
+                <p class="footer-copy">Mohammed Mahbub Alam &copy; <span id="year"></span></p>
+            </div>
+            <p class="footer-note mono">Designed &amp; Built with care — no frameworks harmed.</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/mohammed-mahbub-alam" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Mahbub-git-repo" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="mailto:u2108017@student.cuet.ac.bd" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Back to top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
