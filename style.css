@@ -254,6 +254,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     gap: var(--sp-1);
+    flex-shrink: 0;        /* prevent it from being squished */
 }
 
 .icon-btn {
@@ -266,6 +267,7 @@ header.scrolled {
     color: var(--clr-text-muted);
     transition: color var(--t-fast), background var(--t-fast);
     font-size: 1rem;
+    flex-shrink: 0;
 }
 
 .icon-btn:hover {
@@ -273,28 +275,40 @@ header.scrolled {
     background: var(--clr-primary-dim);
 }
 
-/* Hamburger */
 .hamburger {
-    display: none;
     flex-direction: column;
     gap: 5px;
     width: 40px;
     height: 40px;
     padding: 9px;
     border-radius: var(--r-sm);
+    display: none;         /* hidden on desktop */
+    flex-shrink: 0;
 }
 
 .bar {
     display: block;
+    width: 100%;
     height: 2px;
-    background: var(--clr-text-muted);
+    background: var(--clr-text);   /* changed from muted to full text color */
     border-radius: 2px;
-    transition: transform var(--t-base), opacity var(--t-base);
+    transition: transform var(--t-base), opacity var(--t-base), background var(--t-base);
 }
 
 .hamburger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--clr-primary); }
 .hamburger.open .bar:nth-child(2) { opacity: 0; }
 .hamburger.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--clr-primary); }
+
+/* Show hamburger on mobile */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;   /* override the desktop none */
+    }
+}
 
 /* Scroll Progress */
 .scroll-progress {
